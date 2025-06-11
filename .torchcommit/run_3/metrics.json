@@ -1,0 +1,28 @@
+[
+    {
+        "event": "start",
+        "timestamp": 1749671948.967662
+    },
+    {
+        "epoch": 0,
+        "timestamp": 1749671950.144442,
+        "metrics": {
+            "avg_loss": 0.7719487405618032
+        }
+    },
+    {
+        "epoch": 1,
+        "timestamp": 1749671951.240196,
+        "metrics": {
+            "avg_loss": 0.45327595330079395
+        }
+    },
+    {
+        "event": "end",
+        "timestamp": 1749671951.240198
+    },
+    {
+        "event": "duration",
+        "seconds": 2.272535800933838
+    }
+]

@@ -1,0 +1,5 @@
+setup.py
+torchcommit.egg-info/PKG-INFO
+torchcommit.egg-info/SOURCES.txt
+torchcommit.egg-info/dependency_links.txt
+torchcommit.egg-info/top_level.txt
