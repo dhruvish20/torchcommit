@@ -22,10 +22,6 @@ model = ConvolutionLayer().to(device)
 loss_fn = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
-
-
-
-
 train_loader = DataLoader(
     datasets.MNIST(root='./data', train=True, download=True, transform=transforms.ToTensor()),
     batch_size=32,
@@ -37,12 +33,13 @@ tracker = ExperimentTracker(
     optimizer=optimizer,
     loss_function=loss_fn,
     dataloader=train_loader,
-    epochs=10,
     checkpoints=True
 )
 
 tracker.start()
-for epoch in range(2):
+
+num_epochs = 2
+for epoch in range(num_epochs):
     running_loss = 0.0
     for batch_idx, (data, target) in enumerate(train_loader):
         data, target = data.to(device), target.to(device)
@@ -56,9 +53,11 @@ for epoch in range(2):
         running_loss += loss.item()
 
     avg_loss = running_loss / len(train_loader)
+
     tracker.log(epoch=epoch, metrics={"avg_loss": avg_loss})
+    print(f"[Epoch {epoch+1}] Avg Loss: {avg_loss:.4f}")
 
 tracker.end()
 
-print("Training complete.")
-print(f"Final loss: {avg_loss:.4f}")
+print("✅ Training complete.")
+print(f"📦 Final loss: {avg_loss:.4f}")
